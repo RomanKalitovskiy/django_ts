@@ -9,15 +9,13 @@ on:
   pull_request:
     branches: ["master", "development"]
 
-defaults:
-  run:
-    shell: bash
-    working-directory: frontend
-
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        shell: bash
+        working-directory: frontend
     strategy:
       matrix:
         node-version: [18.x]
@@ -31,7 +29,5 @@ jobs:
           cache: "npm"
       - name: Install dependencies
         run: yarn --frozen-lockfile
-        working-directory: frontend
       - name: Run tests
         run: yarn test
-        working-directory: frontend

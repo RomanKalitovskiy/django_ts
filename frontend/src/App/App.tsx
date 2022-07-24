@@ -11,9 +11,11 @@ import Login from "../Components/Login/Login";
 function App() {
   return (
     <div className={s.app}>
+      test
       <Header />
       <main>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservation" element={<Reservation />} />

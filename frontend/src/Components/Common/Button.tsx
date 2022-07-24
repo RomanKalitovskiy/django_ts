@@ -2,10 +2,9 @@
 import s from "./Button.module.scss";
 
 function Button() {
-  const authorize: boolean = false;
   return (
     <button className={s.button} type="button">
-      {authorize ? "Logout" : "Login"}
+      {false ? "Logout" : "Login"}
     </button>
   );
 }

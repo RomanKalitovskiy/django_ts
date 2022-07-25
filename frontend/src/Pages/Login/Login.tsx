@@ -1,7 +1,6 @@
 import s from "./Login.module.scss";
 
-function Login() {
-  return (
+const Login = () => (
     <div className={s.login}>
       <form className={s.loginForm} noValidate>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
@@ -9,7 +8,6 @@ function Login() {
         <input type="email" id="email" />
       </form>
     </div>
-  );
-}
+  )
 
 export default Login;

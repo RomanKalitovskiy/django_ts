@@ -1,9 +1,8 @@
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.scss";
-import Button from "../Common/Button";
+import Button from "../../Components/Common/Button";
 
-function Header() {
-  return (
+const Header = () => (
     <header>
       <nav>
         <ul className={s.navigation}>
@@ -26,7 +25,6 @@ function Header() {
       </nav>
       <Button />
     </header>
-  );
-}
+  )
 
 export default Header;

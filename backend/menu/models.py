@@ -4,11 +4,13 @@ from django.db import models
 
 
 def directory_path(instance, *args):
-    return 'menu/media/{0}/{1}.png'.format(instance.menu_type, instance.id)
+    return 'menu/media/{0}/{1}.png'.format(instance.category, instance.id)
 
 
 class MenuPosition(models.Model):
-    menu_type = models.CharField(verbose_name='Type', max_length=10)
+    CATEGORIES = ['Піца', 'Салати', 'Десерти', 'Напої']
+
+    category = models.CharField(verbose_name='Category', max_length=10)
     title = models.CharField(verbose_name='Title', max_length=100)
     description = models.TextField(verbose_name='Description')
     price = models.FloatField(verbose_name='Price')

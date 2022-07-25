@@ -16,7 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from menu.views import MenuAPIView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("menu/", include("menu.urls")),
+    path('api/menu', MenuAPIView.as_view())
 ]

@@ -2,7 +2,6 @@ from rest_framework import serializers
 
 
 class MenuSerializer(serializers.Serializer):
-    category = serializers.CharField()
     title = serializers.CharField()
     description = serializers.CharField()
     price = serializers.FloatField()

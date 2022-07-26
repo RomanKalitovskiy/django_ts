@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import s from "./Home.module.scss";
 
 interface IHomeProps {
-  consoleInput: string;
+  consoleInput: (input: string) => void;
 }
 const Home: React.FC<IHomeProps> = ({ consoleInput }) => {
   const [searchText, setSearchText] = useState<string>("");

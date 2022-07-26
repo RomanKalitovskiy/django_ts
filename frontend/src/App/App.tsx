@@ -9,13 +9,8 @@ import Header from "../Pages/Header/Header";
 import Login from "../Pages/Login/Login";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 
-interface IconsoleFunc {
-  (input: string): void;
-}
-
 const App = () => {
-  const arr: number[] = [5, 7, 4, 2, 1];
-  const consoleInput: IconsoleFunc = (input: string) => {
+  const consoleInput = (input: string) => {
     console.log(input);
   };
 
@@ -24,10 +19,7 @@ const App = () => {
       <Header />
       <main>
         <Routes>
-          <Route
-            path="/home"
-            element={<Home consoleInput={consoleInput} arr={arr} />}
-          />
+          <Route path="/home" element={<Home consoleInput={consoleInput} />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/personal" element={<Personal />} />
@@ -39,6 +31,6 @@ const App = () => {
       <footer className={s.footer}>footer</footer>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,16 +1,23 @@
 from django.db import models
+from django.utils.safestring import mark_safe
 
-# Create your models here.
+
+def directory_path(instance, filename):
+    return 'backend/menu/media/{0}/{1}'.format(instance.category, filename)
 
 
-def directory_path(instance, *args):
-    return 'menu/media/{0}/{1}.png'.format(instance.category, instance.id)
+class Category(models.Model):
+    category = models.CharField(verbose_name='Category', max_length=10)
+
+    def __str__(self):
+        return self.category
+
+    class Meta:
+        verbose_name_plural = 'Categories'
 
 
 class MenuPosition(models.Model):
-    CATEGORIES = ['Піца', 'Салати', 'Десерти', 'Напої']
-
-    category = models.CharField(verbose_name='Category', max_length=10)
+    category = models.ForeignKey(Category, on_delete=models.PROTECT)
     title = models.CharField(verbose_name='Title', max_length=100)
     description = models.TextField(verbose_name='Description')
     price = models.FloatField(verbose_name='Price')
@@ -21,8 +28,5 @@ class MenuPosition(models.Model):
 
     def __str__(self):
         return self.title
-
-    class Meta:
-        ordering = ['title']
 
 

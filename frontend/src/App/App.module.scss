@@ -2,11 +2,12 @@
   padding: 0;
   margin: 0;
 }
-
+body {
+  background-color: white;
+}
 .app {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-color: lightgrey;
 }
 main {
   width: 100%;

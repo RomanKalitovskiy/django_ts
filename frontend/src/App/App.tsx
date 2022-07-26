@@ -9,28 +9,22 @@ import Header from "../Components/Header/Header";
 import Login from "../Pages/Login/Login";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 
-const App = () => {
-  const consoleInput = (input: string) => {
-    console.log(input);
-  };
-
-  return (
-    <div className={s.app}>
-      <Header />
-      <main>
-        <Routes>
-          <Route path="/" element={<Home consoleInput={consoleInput} />} />
-          <Route path="/menu" element={<Menu />} />
-          <Route path="/reservation" element={<Reservation />} />
-          <Route path="/personal" element={<Personal />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </main>
-      <footer className={s.footer}>footer</footer>
-    </div>
-  );
-};
+const App = () => (
+  <div className={s.app}>
+    <Header />
+    <main>
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/menu" element={<Menu />} />
+        <Route path="/reservation" element={<Reservation />} />
+        <Route path="/personal" element={<Personal />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+    </main>
+    <footer className={s.footer}>footer</footer>
+  </div>
+);
 
 export default App;

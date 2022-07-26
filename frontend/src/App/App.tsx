@@ -5,7 +5,7 @@ import Menu from "../Pages/Menu/Menu";
 import Reservation from "../Pages/Reservation/Reservation";
 import Personal from "../Pages/Personal/Personal";
 import Account from "../Pages/Account/Account";
-import Header from "../Pages/Header/Header";
+import Header from "../Components/Header/Header";
 import Login from "../Pages/Login/Login";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
 
@@ -19,7 +19,7 @@ const App = () => {
       <Header />
       <main>
         <Routes>
-          <Route path="/home" element={<Home consoleInput={consoleInput} />} />
+          <Route path="/" element={<Home consoleInput={consoleInput} />} />
           <Route path="/menu" element={<Menu />} />
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/personal" element={<Personal />} />

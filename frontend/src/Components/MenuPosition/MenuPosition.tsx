@@ -1,5 +1,5 @@
 import React from "react";
-import { IMenuPosition } from "../../models";
+import { IMenuPosition } from "../../Models/menu";
 // import s from "./MenuPosition.module.scss";
 
 type MenuPositionProps = { menuPosition: IMenuPosition };

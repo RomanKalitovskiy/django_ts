@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IMenuGroup } from "./models";
+import { IMenuGroup } from "../../Models/menu";
 
 export const menuApi = createApi({
   reducerPath: "menu/api",

@@ -26,7 +26,7 @@
     color: #636662;
   }
   h4 {
-    a {
+    span {
       text-decoration: none;
       color: #d22730;
       font-weight: 900;
@@ -43,18 +43,7 @@
   flex-direction: row;
   margin: auto 28px;
 }
-.topNavigationItem {
-  list-style-type: none;
-  display: inline-block;
-  margin-right: 15px;
-  a {
-    font-size: 14px;
-    line-height: 1.4em;
-    font-weight: 400;
-    text-decoration: none;
-    color: black;
-  }
-}
+
 .login {
   margin-left: 290px;
   display: flex;
@@ -112,37 +101,7 @@
   width: 70%;
   align-self: flex-end;
 }
-.bottomNavigationItem {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-right: 10px;
-  flex: 1 1 130px;
-  text-align: center;
-  a {
-    text-decoration: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 12px;
-    border-bottom: 3px solid transparent;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    width: 100%;
-    height: 100%;
-    padding-bottom: 10px;
-    &:hover {
-      border-bottom: 3px solid #009246;
-      color: #009246;
-    }
-    img {
-      width: 12%;
-      margin-bottom: 7px;
-    }
-  }
-}
+
 .basket {
   font-size: 14px;
   display: flex;

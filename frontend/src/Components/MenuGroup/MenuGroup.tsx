@@ -1,5 +1,5 @@
 import React from "react";
-import { IMenuGroup } from "../../models";
+import { IMenuGroup } from "../../Models/menu";
 import MenuPosition from "../MenuPosition/MenuPosition";
 // import s from "./MenuGroup.module.scss";
 

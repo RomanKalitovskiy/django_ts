@@ -1,5 +1,5 @@
-import MenuGroup from "./components/MenuGroup/MenuGroup";
-import { useGetMenuQuery } from "./menu.api";
+import MenuGroup from "../../Components/MenuGroup/MenuGroup";
+import { useGetMenuQuery } from "../../Store/menu/menu.api";
 
 const Menu = () => {
   const { isLoading, isError, data, isSuccess } = useGetMenuQuery(null);

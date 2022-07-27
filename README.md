@@ -1,3 +1,3 @@
 # django_ts
 
-It is readmi file for our project
+This is readme file for our project

@@ -5,7 +5,7 @@ from .models import *
 
 
 class MenuAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'category', 'description', 'price', 'weight', 'bonus_increment', 'image',
+    list_display = ('id', 'title', 'category', 'description', 'price', 'weight', 'bonus_increment', 'image', 'icon',
                     'is_active')
     list_display_links = ('id', 'title')
     search_fields = ('title',)

@@ -1,11 +1,18 @@
 from rest_framework import serializers
 
+from .models import *
 
-class MenuSerializer(serializers.Serializer):
-    title = serializers.CharField()
-    description = serializers.CharField()
-    price = serializers.FloatField()
-    weight = serializers.IntegerField()
+
+class MenuSerializer(serializers.ModelSerializer):
     image = serializers.CharField()
-    bonus_increment = serializers.IntegerField()
-    is_active = serializers.BooleanField()
+    icon = serializers.CharField()
+
+    class Meta:
+        model = MenuPosition
+        fields = ('title', 'description', 'price', 'weight', 'image', 'icon', 'bonus_increment', 'is_active')
+
+
+class CategoriesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Category
+        fields = '__all__'

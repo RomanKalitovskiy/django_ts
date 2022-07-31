@@ -36,6 +36,7 @@ const Header = () => (
     <div className={s.bottomHeader}>
       <NavLink to="/">
         <img
+          className={s.logo}
           src="https://mapizza.com.ua/wp-content/uploads/2022/03/logo-pizza-red.svg"
           alt="Ma Pizza logo"
         />
@@ -51,6 +52,11 @@ const Header = () => (
           {0}
         </button>
         <span>0 грн</span>
+        <div className={s.burgerMenuIcon}>
+          <div>{}</div>
+          <div>{}</div>
+          <div>{}</div>
+        </div>
       </div>
     </div>
   </header>

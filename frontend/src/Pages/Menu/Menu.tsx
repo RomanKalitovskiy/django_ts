@@ -3,7 +3,6 @@ import { useGetMenuQuery } from "../../store/menu/menu.api";
 
 const Menu = () => {
   const { isLoading, isError, data, isSuccess } = useGetMenuQuery(null);
-  console.log(isLoading, isError, data, isSuccess);
 
   const loading = <div>Loading...</div>;
 

@@ -8,6 +8,7 @@ import Account from "../Pages/Account/Account";
 import Header from "../Components/Header/Header";
 import Login from "../Pages/Login/Login";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
+import Footer from "../Components/Footer/Footer";
 
 const App = () => (
   <div className={s.app}>
@@ -23,7 +24,7 @@ const App = () => (
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </main>
-    <footer className={s.footer}>footer</footer>
+    <Footer />
   </div>
 );
 

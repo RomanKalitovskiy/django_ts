@@ -5,14 +5,16 @@ from .models import *
 
 class MenuSerializer(serializers.ModelSerializer):
     image = serializers.CharField()
-    icon = serializers.CharField()
 
     class Meta:
         model = MenuPosition
-        fields = ('title', 'description', 'price', 'weight', 'image', 'icon', 'bonus_increment', 'is_active')
+        fields = ('id', 'title', 'description', 'price', 'weight',
+                  'image', 'bonus_increment', 'is_active')
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
+    icon = serializers.CharField()
+
     class Meta:
         model = Category
         fields = '__all__'

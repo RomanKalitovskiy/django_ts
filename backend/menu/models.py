@@ -7,12 +7,13 @@ def image_directory_path(instance, filename):
 
 
 def icon_directory_path(_, filename):
-    return f'menu/media/Icons/{filename}'
+    return f'menu/media/icons/{filename}'
 
 
 class Category(models.Model):
-    category = models.CharField(verbose_name='Category', max_length=10)
-
+    category = models.CharField(verbose_name='Category', max_length=16)
+    icon = models.FileField(verbose_name='Icon', blank=True, upload_to=icon_directory_path)
+    url = models.CharField(verbose_name='Url', max_length=16, default='')
     def __str__(self):
         return self.category
 
@@ -27,7 +28,6 @@ class MenuPosition(models.Model):
     price = models.FloatField(verbose_name='Price')
     weight = models.IntegerField(verbose_name='Weight')
     image = models.ImageField(verbose_name='Picture', blank=True, upload_to=image_directory_path)
-    icon = models.FileField(verbose_name='Icon', blank=True, upload_to=icon_directory_path)
     bonus_increment = models.IntegerField(verbose_name='+Bonuses', default=0)
     is_active = models.BooleanField(verbose_name='Activity', default=True)
 

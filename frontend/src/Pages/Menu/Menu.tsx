@@ -1,25 +1,34 @@
-import MenuGroup from "../../Components/MenuGroup/MenuGroup";
-import { useGetMenuQuery } from "../../store/menu/menu.api";
+import React from "react";
+import MenuPosition from "../../Components/MenuPosition/MenuPosition";
+import { useGetMenuPositionsQuery } from "../../store/menu/menu.api";
 
-const Menu = () => {
-  const { isLoading, isError, data, isSuccess } = useGetMenuQuery(null);
+interface MenuParams {
+  categoryId: number;
+}
+const Menu: React.FC<MenuParams> = ({ categoryId }) => {
+  const {
+    isLoading,
+    isError,
+    data: menuPositions = [],
+    isSuccess,
+  } = useGetMenuPositionsQuery(categoryId);
 
   const loading = <div>Loading...</div>;
 
   const error = <div>Error...</div>;
 
-  const success = data?.map((group) => (
-    <MenuGroup key={group.category} group={group} />
+  const success = menuPositions.map((position) => (
+    <MenuPosition key={position.id} position={position} />
   ));
 
   return (
+    // const { isLoading, isError, data, isSuccess } = useGetMenuQuery(null);
+
     <>
-      <div>Menu</div>
       {isLoading && loading}
       {isError && error}
       {isSuccess && success}
     </>
   );
 };
-
 export default Menu;

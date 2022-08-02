@@ -1,3 +1,4 @@
+import React from "react";
 import { NavLink } from "react-router-dom";
 import s from "./Header.module.scss";
 import heart from "../../Assets/Icons/heart.png";
@@ -7,9 +8,13 @@ import person from "../../Assets/Icons/user.png";
 import { TopHeaderNavItem } from "../TopHeaderNavItem/TopHeaderNavItem";
 import { pages } from "../../Configuration/pages";
 import { HeaderMenuCategoryItem } from "../HeaderMenuCategoryItem/HeaderMenuCategoryItem";
-import { menuCategories } from "../../Configuration/categories";
+import { IMenuCategory } from "../../Models/menu";
 
-const Header = () => (
+interface HeaderProps {
+  menuCategories: IMenuCategory[];
+}
+
+const Header: React.FC<HeaderProps> = ({ menuCategories }) => (
   <header>
     <div className={s.topHeader}>
       <div className={s.headerContacts}>
@@ -43,7 +48,7 @@ const Header = () => (
       </NavLink>
       <ul className={s.bottomHeaderUL}>
         {menuCategories.map((category) => (
-          <HeaderMenuCategoryItem category={category} />
+          <HeaderMenuCategoryItem key={category.id} category={category} />
         ))}
       </ul>
       <div className={s.basket}>

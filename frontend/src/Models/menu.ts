@@ -1,5 +1,5 @@
 export interface IMenuPosition {
-  category: string;
+  id: number;
   title: string;
   description: string;
   price: number;
@@ -9,13 +9,9 @@ export interface IMenuPosition {
   is_active: boolean;
 }
 
-export interface IMenuGroup {
-  category: string;
-  results: IMenuPosition[];
-}
-
 export interface IMenuCategory {
-  title: string;
+  id: number;
+  category: string;
   url: string;
   icon: string;
 }

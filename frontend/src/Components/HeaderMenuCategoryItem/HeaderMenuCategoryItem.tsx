@@ -6,12 +6,12 @@ import s from "./HeaderMenuCategoryItem.module.scss";
 type HeaderMenuCategoryItemProps = { category: IMenuCategory };
 
 export const HeaderMenuCategoryItem: React.FC<HeaderMenuCategoryItemProps> = ({
-  category: { title, url, icon },
+  category: { category, url, icon },
 }) => (
   <li className={s.bottomNavigationItem}>
     <NavLink to={url}>
-      <img src={icon} alt={`${title} icon`} />
-      <span>{title}</span>
+      <img src={icon} alt={`${category} icon`} />
+      <span>{category}</span>
     </NavLink>
   </li>
 );

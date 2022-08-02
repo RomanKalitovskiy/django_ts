@@ -2,10 +2,10 @@ import React from "react";
 import { IMenuPosition } from "../../Models/menu";
 // import s from "./MenuPosition.module.scss";
 
-type MenuPositionProps = { menuPosition: IMenuPosition };
+type MenuPositionProps = { position: IMenuPosition };
 
 const MenuPosition: React.FC<MenuPositionProps> = ({
-  menuPosition: { title, description },
+  position: { title, description },
 }) => (
   <div>
     <div>{title}</div>

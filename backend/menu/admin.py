@@ -5,12 +5,12 @@ from .models import *
 
 
 class MenuAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'category', 'description', 'price', 'weight', 'bonus_increment', 'image', 'icon',
-                    'is_active')
-    list_display_links = ('id', 'title')
+    list_display = ('id', 'title', 'category', 'description', 'price', 'weight', 'bonus_increment', 'image',
+                    'is_active',)
+    list_display_links = ('id', 'title',)
     search_fields = ('title',)
     list_editable = ('is_active',)
-    list_filter = ('category', 'is_active')
+    list_filter = ('category', 'is_active',)
     # readonly_fields = ('get_html_image',)
     #
     # def get_html_image(self, object):
@@ -23,7 +23,7 @@ admin.site.register(MenuPosition, MenuAdmin)
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'category',)
+    list_display = ('id', 'category', 'icon', 'url', )
     list_display_links = ('category',)
     search_fields = ('category',)
 

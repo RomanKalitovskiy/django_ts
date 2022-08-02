@@ -1,14 +1,18 @@
+import React from "react";
 import s from "./Fotter.module.scss";
-import { menuCategories } from "../../Configuration/categories";
 import { HeaderMenuCategoryItem } from "../HeaderMenuCategoryItem/HeaderMenuCategoryItem";
 import { pages } from "../../Configuration/pages";
 import { TopHeaderNavItem } from "../TopHeaderNavItem/TopHeaderNavItem";
 import instagram from "../../Assets/Icons/free-icon-instagram-2111463.png";
 import facebook from "../../Assets/Icons/free-icon-facebook-174848.png";
 import gmail from "../../Assets/Icons/free-icon-gmail-732200.png";
+import { IMenuCategory } from "../../Models/menu";
 
-const Footer = () => (
-  // @ts-ignore
+interface FooterProps {
+  menuCategories: IMenuCategory[];
+}
+
+const Footer: React.FC<FooterProps> = ({ menuCategories }) => (
   <footer className={s.footer}>
     <div className={`${s.footerItem} ${s.generalInfo}`}>
       <img
@@ -45,7 +49,7 @@ const Footer = () => (
       <span className={s.footerBlockSpan}>Меню:</span>
       <ul className={s.footerMenuUL}>
         {menuCategories.map((category) => (
-          <HeaderMenuCategoryItem category={category} />
+          <HeaderMenuCategoryItem key={category.id} category={category} />
         ))}
       </ul>
     </div>

@@ -9,6 +9,7 @@ import Account from "../Pages/Account/Account";
 import Header from "../Components/Header/Header";
 import Login from "../Pages/Login/Login";
 import PageNotFound from "../Pages/PageNotFound/PageNotFound";
+import Footer from "../Components/Footer/Footer";
 import { useGetMenuCategoriesQuery } from "../store/menu/menu.api";
 import LoadingPage from "../Pages/LoadingPage/LoadingPage";
 
@@ -53,7 +54,7 @@ const App: React.FC = () => {
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </main>
-          <footer className={s.footer}>footer</footer>
+          <Footer menuCategories={menuCategories} />
         </>
       )}
     </div>

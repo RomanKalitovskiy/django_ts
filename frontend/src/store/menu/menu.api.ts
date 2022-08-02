@@ -7,7 +7,7 @@ export const menuApi = createApi({
     baseUrl: "http://127.0.0.1:8000/api/menu/",
   }),
   endpoints: (build) => ({
-    getMenuCategories: build.query<IMenuCategory[], undefined>({
+    getMenuCategories: build.query<IMenuCategory[], void>({
       query: () => ({
         url: `categories/`,
       }),

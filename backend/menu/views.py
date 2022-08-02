@@ -10,7 +10,7 @@ class MenuAPIView(APIView):
     def get(self, request, category_id):
         positions = MenuPosition.objects.filter(category=category_id).values()
         for position in positions:
-            position['image'] = f'http://{request.get_host()}/api/menu/position/image/{position["id"]}/'
+            position['image'] = f'http://{request.get_host()}/media/{position["image"]}'
         return Response(MenuSerializer(positions, many=True).data)
 
 
@@ -18,28 +18,6 @@ class CategoriesAPIView(APIView):
     def get(self, request):
         categories = Category.objects.all().values()
         for category in categories:
-            category['icon'] = f'http://{request.get_host()}/api/menu/category/icon/{category["id"]}/'
+            category['icon'] = f'http://{request.get_host()}/media/{category["icon"]}'
         serializer = CategoriesSerializer(categories, many=True)
         return Response(serializer.data)
-
-
-def image_directory_path(instance, filename):
-    return f'menu/media/{instance.category}/{filename}'
-
-
-def icon_directory_path(_, filename):
-    return f'menu/media/icons/{filename}'
-
-
-class CategoriesIconAPIView(APIView):
-    def get(self, request, category_id):
-        icon = Category.objects.get(id=category_id).icon.open("rb")
-        response = HttpResponse(icon, content_type='application')
-        return response
-
-
-class MenuPositipnImageAPIView(APIView):
-    def get(self, request, position_id):
-        image = MenuPosition.objects.get(id=position_id).image.open("rb")
-        response = HttpResponse(image, content_type='application')
-        return response

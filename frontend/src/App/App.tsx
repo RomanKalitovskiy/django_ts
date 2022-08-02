@@ -19,7 +19,7 @@ const App: React.FC = () => {
     isError,
     data: menuCategories,
     isSuccess,
-  } = useGetMenuCategoriesQuery(undefined);
+  } = useGetMenuCategoriesQuery();
 
   return (
     <div className={s.app}>

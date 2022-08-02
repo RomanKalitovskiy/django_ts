@@ -23,7 +23,7 @@ admin.site.register(MenuPosition, MenuAdmin)
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'category', 'icon',)
+    list_display = ('id', 'category', 'icon', 'url', )
     list_display_links = ('category',)
     search_fields = ('category',)
 

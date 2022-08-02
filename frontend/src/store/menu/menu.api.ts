@@ -1,18 +1,23 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { IMenuGroup } from "../../Models/menu";
+import { IMenuPosition, IMenuCategory } from "../../Models/menu";
 
 export const menuApi = createApi({
-  reducerPath: "menu/api",
+  reducerPath: "menuApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "http://127.0.0.1:8000/api/menu",
+    baseUrl: "http://127.0.0.1:8000/api/menu/",
   }),
   endpoints: (build) => ({
-    getMenu: build.query<IMenuGroup[], any>({
+    getMenuCategories: build.query<IMenuCategory[], undefined>({
       query: () => ({
-        url: ``,
+        url: `categories/`,
+      }),
+    }),
+    getMenuPositions: build.query<IMenuPosition[], number>({
+      query: (categoryId) => ({
+        url: `positions/${categoryId}/`,
       }),
     }),
   }),
 });
 
-export const { useGetMenuQuery } = menuApi;
+export const { useGetMenuCategoriesQuery, useGetMenuPositionsQuery } = menuApi;

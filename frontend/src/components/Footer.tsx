@@ -1,18 +1,18 @@
 import React from "react";
-import s from "./Fotter.module.scss";
-import { HeaderMenuCategoryItem } from "../HeaderMenuCategoryItem/HeaderMenuCategoryItem";
-import { pages } from "../../Configuration/pages";
-import { TopHeaderNavItem } from "../TopHeaderNavItem/TopHeaderNavItem";
-import instagram from "../../Assets/Icons/free-icon-instagram-2111463.png";
-import facebook from "../../Assets/Icons/free-icon-facebook-174848.png";
-import gmail from "../../Assets/Icons/free-icon-gmail-732200.png";
-import { IMenuCategory } from "../../Models/menu";
+import { pages } from "configuration/pages";
+import { IMenuCategory } from "models/menu";
+import gmail from "assets/icons/gmail.png";
+import facebook from "assets/icons/facebook.png";
+import instagram from "assets/icons/instagram.png";
+import CategoryItem from "components/CategoryItem";
+import NavItem from "components/NavItem";
+import s from "components/styles/Fotter.module.scss";
 
 interface FooterProps {
-  menuCategories: IMenuCategory[];
+  categories: IMenuCategory[];
 }
 
-const Footer: React.FC<FooterProps> = ({ menuCategories }) => (
+const Footer: React.FC<FooterProps> = ({ categories }) => (
   <footer className={s.footer}>
     <div className={`${s.footerItem} ${s.generalInfo}`}>
       <img
@@ -48,8 +48,8 @@ const Footer: React.FC<FooterProps> = ({ menuCategories }) => (
     <div className={`${s.footerItem} ${s.footerMenu}`}>
       <span className={s.footerBlockSpan}>Меню:</span>
       <ul className={s.footerMenuUL}>
-        {menuCategories.map((category) => (
-          <HeaderMenuCategoryItem key={category.id} category={category} />
+        {categories.map((category) => (
+          <CategoryItem key={category.id} category={category} />
         ))}
       </ul>
     </div>
@@ -57,7 +57,7 @@ const Footer: React.FC<FooterProps> = ({ menuCategories }) => (
       <span className={s.footerBlockSpan}>Про компанію:</span>
       <ul className={s.footerTopHeaderUL}>
         {pages.map((page) => (
-          <TopHeaderNavItem key={page.url} page={page} />
+          <NavItem key={page.url} page={page} />
         ))}
       </ul>
     </div>

@@ -1,11 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { menuApi } from "./menu/menu.api";
+import { menuApi } from "api/menu.api";
 
-// eslint-disable-next-line import/prefer-default-export
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     [menuApi.reducerPath]: menuApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(menuApi.middleware),
 });
+
+export default store;

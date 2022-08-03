@@ -1,4 +1,4 @@
-import { IPage } from "../Models/page";
+import { IPage } from "models/page";
 
 export const pages: IPage[] = [
   { title: "Про нас", url: "/about", component: () => <>1</> },

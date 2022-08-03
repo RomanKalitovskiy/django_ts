@@ -1,11 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { IMenuCategory } from "../../Models/menu";
-import s from "./HeaderMenuCategoryItem.module.scss";
+import { IMenuCategory } from "models/menu";
+import s from "components/styles/CategoryItem.module.scss";
 
-type HeaderMenuCategoryItemProps = { category: IMenuCategory };
+type CategoryItemProps = { category: IMenuCategory };
 
-export const HeaderMenuCategoryItem: React.FC<HeaderMenuCategoryItemProps> = ({
+const CategoryItem: React.FC<CategoryItemProps> = ({
   category: { category, url, icon },
 }) => (
   <li className={s.bottomNavigationItem}>
@@ -15,3 +15,5 @@ export const HeaderMenuCategoryItem: React.FC<HeaderMenuCategoryItemProps> = ({
     </NavLink>
   </li>
 );
+
+export default CategoryItem;

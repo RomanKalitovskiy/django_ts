@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import s from "./Header.module.scss";
-import heart from "../../Assets/Icons/heart.png";
-import basket from "../../Assets/Icons/shopping-bag.png";
-
-import person from "../../Assets/Icons/user.png";
-import { TopHeaderNavItem } from "../TopHeaderNavItem/TopHeaderNavItem";
-import { pages } from "../../Configuration/pages";
-import { HeaderMenuCategoryItem } from "../HeaderMenuCategoryItem/HeaderMenuCategoryItem";
-import { IMenuCategory } from "../../Models/menu";
+import { pages } from "configuration/pages";
+import { IMenuCategory } from "models/menu";
+import heart from "assets/icons/heart.png";
+import basket from "assets/icons/shopping-bag.png";
+import person from "assets/icons/user.png";
+import NavItem from "components/NavItem";
+import CategoryItem from "components/CategoryItem";
+import s from "components/styles/Header.module.scss";
 
 interface HeaderProps {
-  menuCategories: IMenuCategory[];
+  categories: IMenuCategory[];
 }
-const Header: React.FC<HeaderProps> = ({ menuCategories }) => {
+const Header: React.FC<HeaderProps> = ({ categories }) => {
   const [toggleTopMenu, setToggleTopMenu] = useState<boolean>(false);
 
   return (
@@ -32,7 +31,7 @@ const Header: React.FC<HeaderProps> = ({ menuCategories }) => {
         <nav className={s.topNavigation}>
           <ul className={s.topNavigationUL}>
             {pages.map((page) => (
-              <TopHeaderNavItem key={page.url} page={page} />
+              <NavItem key={page.url} page={page} />
             ))}
           </ul>
         </nav>
@@ -59,8 +58,8 @@ const Header: React.FC<HeaderProps> = ({ menuCategories }) => {
               : `${s.bottomHeaderULHidden} ${s.bottomHeaderUL}`
           }
         >
-          {menuCategories.map((category) => (
-            <HeaderMenuCategoryItem key={category.id} category={category} />
+          {categories.map((category) => (
+            <CategoryItem key={category.id} category={category} />
           ))}
         </ul>
         <div className={s.basket}>

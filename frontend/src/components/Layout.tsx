@@ -5,16 +5,16 @@ import Footer from "components/Footer";
 import { IMenuCategory } from "models/menu";
 
 interface LayoutProps {
-  сategories: IMenuCategory[];
+  categories: IMenuCategory[];
 }
 
-const Layout: React.FC<LayoutProps> = ({ сategories }) => (
+const Layout: React.FC<LayoutProps> = ({ categories }) => (
   <>
-    <Header categories={сategories} />
+    <Header categories={categories} />
     <main>
       <Outlet />
     </main>
-    <Footer categories={сategories} />
+    <Footer categories={categories} />
   </>
 );
 

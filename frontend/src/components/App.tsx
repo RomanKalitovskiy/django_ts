@@ -1,5 +1,6 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+
 import NotFound from "components/NotFound";
 import Loader from "components/Loader";
 import Error from "components/Error";
@@ -23,9 +24,11 @@ const App: React.FC = () => {
       {isSuccess &&
         (categories.length ? (
           <Routes>
-            <Route path="/" element={<Layout сategories={categories} />}>
-              <Route index element={<Menu categoryId={categories[0].id} />} />
-
+            <Route path="/" element={<Layout categories={categories} />}>
+              <Route
+                index
+                element={<Navigate to={categories[0].url} replace />}
+              />
               {categories.map(({ id, url }) => (
                 <Route key={id} path={url} element={<Menu categoryId={id} />} />
               ))}

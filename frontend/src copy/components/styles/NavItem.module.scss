@@ -1,0 +1,36 @@
+@media screen and (min-width: 1301px) {
+  .topNavigationItem {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 15px;
+    min-width: fit-content;
+
+    a {
+      font-size: 14px;
+      line-height: 1.4em;
+      font-weight: 400;
+      text-decoration: none;
+      color: black;
+    }
+  }
+}
+
+@media screen and (min-width: 1920px) {
+}
+
+@media screen and (max-width: 1300px) {
+  .topNavigationItem {
+    list-style-type: none;
+    display: inline-block;
+    margin: 4px auto;
+    min-width: fit-content;
+
+    a {
+      font-size: 120%;
+      line-height: 1.4em;
+      font-weight: 400;
+      text-decoration: none;
+      color: black;
+    }
+  }
+}

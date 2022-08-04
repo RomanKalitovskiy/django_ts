@@ -2,16 +2,15 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { pages } from "configuration/pages";
 import { IMenuCategory } from "models/menu";
-import heart from "assets/icons/heart.png";
-import basket from "assets/icons/shopping-bag.png";
-import person from "assets/icons/user.png";
 import NavItem from "components/NavItem";
 import CategoryItem from "components/CategoryItem";
 import s from "components/styles/Header.module.scss";
+import basket from "../assets/icons/shopping-bag.png";
 
 interface HeaderProps {
   categories: IMenuCategory[];
 }
+
 const Header: React.FC<HeaderProps> = ({ categories }) => {
   const [toggleTopMenu, setToggleTopMenu] = useState<boolean>(false);
 
@@ -36,9 +35,37 @@ const Header: React.FC<HeaderProps> = ({ categories }) => {
           </ul>
         </nav>
         <div className={s.login}>
-          <img src={heart} alt="Favourite list" />
+          <svg
+            className={s.heartSVG}
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            width="24"
+            height="24"
+            x="0"
+            y="0"
+            viewBox="0 0 24 24"
+          >
+            <path
+              xmlns="http://www.w3.org/2000/svg"
+              d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z"
+              fill="currentColor"
+            />
+          </svg>
           <button type="submit">
-            <img src={person} alt="User" />
+            <svg
+              className={s.personSVG}
+              xmlns="http://www.w3.org/2000/svg"
+              id="Outline"
+              viewBox="0 0 24 24"
+              width="24"
+              height="24"
+            >
+              <path d="M12,12A6,6,0,1,0,6,6,6.006,6.006,0,0,0,12,12ZM12,2A4,4,0,1,1,8,6,4,4,0,0,1,12,2Z" />
+              <path
+                d="M12,14a9.01,9.01,0,0,0-9,9,1,1,0,0,0,2,0,7,7,0,0,1,14,0,1,1,0,0,0,2,0A9.01,9.01,0,0,0,12,14Z"
+                fill="currentColor"
+              />
+            </svg>
             <span>Вхід</span>
           </button>
         </div>

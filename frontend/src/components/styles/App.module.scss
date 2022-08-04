@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  transition: all 0.3s linear;
 }
 body {
   background-color: white;
@@ -15,4 +16,10 @@ main {
   padding: 0 15px;
   height: fit-content;
   margin: 20px auto;
+}
+
+@media screen and (max-width: 1300px) {
+  main {
+    margin-top: 112px;
+  }
 }

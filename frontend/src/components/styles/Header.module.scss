@@ -81,17 +81,23 @@ header {
         transition-delay: 180ms;
       }
 
-      img {
+      .personSVG {
         height: 70%;
         margin: 0 2px 0 0;
+        fill: white;
       }
     }
 
-    img {
+    .heartSVG {
       display: inline-block;
       height: 40%;
       margin: auto 8px auto 0;
       cursor: pointer;
+      color: #212721;
+
+      &:hover {
+        color: #d22730;
+      }
     }
   }
   .bottomHeader {
@@ -251,19 +257,21 @@ header {
         transition-delay: 180ms;
       }
 
-      img {
+      .personSVG {
         height: 70%;
         margin: 0 2px 0 0;
-        display: inline-block;
       }
     }
 
-    img {
-      display: none;
-      //display: inline-block;
-      //height: 40%;
-      //margin: auto 8px auto 0;
-      //cursor: pointer;
+    .heartSVG {
+      display: inline-block;
+      height: 40%;
+      margin: auto 8px auto 0;
+      cursor: pointer;
+      color: #212721;
+      &:hover {
+        color: #d22730;
+      }
     }
   }
   .bottomHeader {

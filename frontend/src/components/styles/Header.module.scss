@@ -9,10 +9,11 @@ header {
   overflow-x: hidden;
   width: 100%;
 }
+
 @media screen and (min-width: 1301px) {
   .topHeader {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     width: 80%;
     height: 40px;
     margin: 0 auto;
@@ -27,7 +28,7 @@ header {
     justify-content: center;
     flex-direction: column;
     justify-self: center;
-    width: 100%;
+    width: 16%;
 
     p {
       font-size: 80%;
@@ -51,20 +52,22 @@ header {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin: auto 10%;
+    margin: auto 0;
     height: 30px;
     max-width: fit-content;
   }
 
   .login {
-    margin-left: 33%;
     display: flex;
     justify-content: center;
     align-content: center;
-    height: 100%;
-    width: 100%;
+    height: 40px;
+    width: 150px;
+    position: absolute;
+    top: -1px;
+    left: 79%;
 
-    button {
+    .loginButton {
       padding: 8px 12px;
       font-size: 12px;
       background-color: #d22730;
@@ -98,6 +101,20 @@ header {
       &:hover {
         color: #d22730;
       }
+    }
+
+    .favouriteCount {
+      position: relative;
+      padding: 3px;
+      background-color: #d22730;
+      color: #ebebeb;
+      border: none;
+      border-radius: 50%;
+      left: 19%;
+      top: 2px;
+      min-width: 20px;
+      max-width: fit-content;
+      height: 20px;
     }
   }
   .bottomHeader {
@@ -135,6 +152,10 @@ header {
     img {
       width: 50%;
     }
+
+    span {
+      min-width: max-content;
+    }
   }
   .burgerMenuIcon {
     display: none;
@@ -144,7 +165,8 @@ header {
     position: relative;
     right: 21%;
     top: -5px;
-    width: 20px;
+    min-width: 20px;
+    max-width: fit-content;
     background-color: #d22730;
     color: white;
     border: none;
@@ -196,6 +218,7 @@ header {
     align-self: center;
     margin: 20px auto 15px auto;
     order: 3;
+
     p {
       font-size: 100%;
       color: #636662;
@@ -230,36 +253,25 @@ header {
     justify-content: center;
     align-content: center;
     height: 60px;
-    width: 150px;
-    position: absolute;
-    left: 70%;
-    top: 0;
+    max-width: fit-content;
 
-    button {
-      padding: 8px 12px;
+    .loginButton {
       font-size: 12px;
       border: none;
       background-color: transparent;
       border-radius: 10px;
-      height: 80%;
-      width: 80%;
+      height: 100%;
+      width: 30px;
       margin: auto 0;
       cursor: pointer;
+
       span {
-        margin-left: 5px;
-        text-align: center;
-        vertical-align: top;
-        font-size: 160%;
-        display: inline-block;
-      }
-      &:hover {
-        background-color: #009246;
-        transition-delay: 180ms;
+        display: none;
       }
 
       .personSVG {
         height: 70%;
-        margin: 0 2px 0 0;
+        margin: 0 5px;
       }
     }
 
@@ -269,11 +281,26 @@ header {
       margin: auto 8px auto 0;
       cursor: pointer;
       color: #212721;
+
       &:hover {
         color: #d22730;
       }
     }
+    .favouriteCount {
+      position: relative;
+      padding: 3px;
+      background-color: #d22730;
+      color: #ebebeb;
+      border: none;
+      border-radius: 50%;
+      left: 40%;
+      top: 12px;
+      min-width: 20px;
+      max-width: fit-content;
+      height: 20px;
+    }
   }
+
   .bottomHeader {
     position: fixed;
     top: 0;
@@ -287,9 +314,15 @@ header {
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 
+    .logoLink {
+      display: block;
+      justify-self: flex-start;
+      width: 80%;
+      flex-shrink: 4;
+    }
     .logo {
       max-width: 180px;
       max-height: 42px;
@@ -333,8 +366,9 @@ header {
     span {
       display: none;
     }
+
     img {
-      width: 50%;
+      width: 42px;
     }
   }
   .burgerMenuIcon {
@@ -346,6 +380,7 @@ header {
     flex-direction: column;
     width: 20px;
     height: 24px;
+
     div {
       width: 100%;
       height: 15%;

@@ -1,12 +1,12 @@
 import React from "react";
 import { pages } from "configuration/pages";
 import { IMenuCategory } from "models/menu";
-import gmail from "assets/icons/gmail.png";
-import facebook from "assets/icons/facebook.png";
-import instagram from "assets/icons/instagram.png";
 import CategoryItem from "components/CategoryItem";
 import NavItem from "components/NavItem";
 import s from "components/styles/Fotter.module.scss";
+import gmail from "../assets/icons/gmail.png";
+import facebook from "../assets/icons/facebook.png";
+import instagram from "../assets/icons/instagram.png";
 
 interface FooterProps {
   categories: IMenuCategory[];

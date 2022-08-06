@@ -32,6 +32,7 @@ const MenuPosition: React.FC<MenuPositionProps> = ({
         </div>
         <div className={s.quantity}>
           <button
+            disabled={quantity === 0}
             type="button"
             className={`${s.quantityChange} ${s.minus}`}
             onClick={() => setQuantity(quantity - 1)}

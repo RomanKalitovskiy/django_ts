@@ -13,6 +13,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ categories }) => {
   const [toggleTopMenu, setToggleTopMenu] = useState<boolean>(false);
+  const [favouriteCount, setFavouriteCount] = useState<number>(0);
 
   return (
     <header id="header">
@@ -34,7 +35,37 @@ const Header: React.FC<HeaderProps> = ({ categories }) => {
             ))}
           </ul>
         </nav>
+      </div>
+      <div className={s.bottomHeader}>
+        <div className={s.logoLink}>
+          <NavLink to="/">
+            <img
+              className={s.logo}
+              src="https://mapizza.com.ua/wp-content/uploads/2022/03/logo-pizza-red.svg"
+              alt="Ma Pizza logo"
+            />
+          </NavLink>
+        </div>
+
+        <ul
+          className={
+            !toggleTopMenu
+              ? `${s.bottomHeaderULAnimated} ${s.bottomHeaderUL}`
+              : `${s.bottomHeaderULHidden} ${s.bottomHeaderUL}`
+          }
+        >
+          {categories.map((category) => (
+            <CategoryItem key={category.id} category={category} />
+          ))}
+        </ul>
         <div className={s.login}>
+          <button
+            className={s.favouriteCount}
+            type="button"
+            onClick={() => setFavouriteCount(favouriteCount + 1)}
+          >
+            {favouriteCount}
+          </button>
           <svg
             className={s.heartSVG}
             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +82,7 @@ const Header: React.FC<HeaderProps> = ({ categories }) => {
               fill="currentColor"
             />
           </svg>
-          <button type="submit">
+          <button className={s.loginButton} type="submit">
             <svg
               className={s.personSVG}
               xmlns="http://www.w3.org/2000/svg"
@@ -69,26 +100,6 @@ const Header: React.FC<HeaderProps> = ({ categories }) => {
             <span>Вхід</span>
           </button>
         </div>
-      </div>
-      <div className={s.bottomHeader}>
-        <NavLink to="/">
-          <img
-            className={s.logo}
-            src="https://mapizza.com.ua/wp-content/uploads/2022/03/logo-pizza-red.svg"
-            alt="Ma Pizza logo"
-          />
-        </NavLink>
-        <ul
-          className={
-            !toggleTopMenu
-              ? `${s.bottomHeaderULAnimated} ${s.bottomHeaderUL}`
-              : `${s.bottomHeaderULHidden} ${s.bottomHeaderUL}`
-          }
-        >
-          {categories.map((category) => (
-            <CategoryItem key={category.id} category={category} />
-          ))}
-        </ul>
         <div className={s.basket}>
           <img src={basket} alt="Shopping bag" />
           <button className={s.basketCount} type="button">

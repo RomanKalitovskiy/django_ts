@@ -11,6 +11,10 @@
       font-weight: 400;
       text-decoration: none;
       color: black;
+      &:hover {
+        color: #009246;
+        cursor: pointer;
+      }
     }
   }
 }

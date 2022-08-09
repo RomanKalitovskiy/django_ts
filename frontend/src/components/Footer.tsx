@@ -3,7 +3,7 @@ import { pages } from "configuration/pages";
 import { IMenuCategory } from "models/menu";
 import CategoryItem from "components/CategoryItem";
 import NavItem from "components/NavItem";
-import s from "components/styles/Fotter.module.scss";
+import s from "components/styles/Footer.module.scss";
 import gmail from "../assets/icons/gmail.png";
 import facebook from "../assets/icons/facebook.png";
 import instagram from "../assets/icons/instagram.png";

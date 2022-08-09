@@ -221,8 +221,8 @@
     align-items: center;
     margin: 10px 0 10px 12%;
     a {
-      cursor: pointer;
       img {
+        cursor: pointer;
         display: block;
         margin: auto 6px auto 0;
       }
@@ -234,7 +234,7 @@
   .footer {
     display: grid;
     grid-template-columns: 2fr 2fr;
-    grid-template-rows: 1fr 4fr 4fr;
+    grid-template-rows: auto;
     justify-content: flex-start;
     align-content: flex-start;
     padding: 0 15px;
@@ -256,5 +256,30 @@
   }
   .footerBlockSpan {
     min-width: max-content;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    .footerItem {
+      width: 100%;
+    }
+  }
+  .generalInfo {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .logoFooter {
+    width: 50%;
+  }
+  .generalInfoItem {
+    width: 70%;
+  }
+  .socialMedia {
+    justify-content: center;
   }
 }

@@ -8,6 +8,7 @@ import Layout from "components/Layout";
 import Menu from "pages/Menu";
 import { useGetMenuCategoriesQuery } from "api/menu.api";
 import s from "components/styles/App.module.scss";
+import About from "../pages/About";
 
 const App: React.FC = () => {
   const {
@@ -35,6 +36,7 @@ const App: React.FC = () => {
 
               <Route path="*" element={<NotFound />} />
             </Route>
+            <Route path="about" element={<About />} />
           </Routes>
         ) : (
           <Error />

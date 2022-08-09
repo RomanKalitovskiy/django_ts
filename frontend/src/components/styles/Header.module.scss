@@ -8,9 +8,14 @@
 header {
   overflow-x: hidden;
   width: 100%;
+  z-index: 8;
 }
 
 @media screen and (min-width: 1301px) {
+  header {
+    position: fixed;
+    top: 0;
+  }
   .topHeader {
     display: flex;
     justify-content: flex-start;
@@ -184,7 +189,8 @@ header {
     flex-direction: column-reverse;
   }
   .topHeader {
-    position: absolute;
+    z-index: 8;
+    position: fixed;
     top: 72px;
     left: 2%;
     right: 2%;
@@ -397,5 +403,26 @@ header {
     border: none;
     border-radius: 100%;
     padding: 3px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .topHeader,
+  .bottomHeader,
+  .bottomHeaderUL {
+    width: 100%;
+    padding: 0 10px;
+    left: 0;
+    right: 0;
+  }
+
+  .bottomHeader {
+    .logoLink {
+      width: 40%;
+    }
+    .logo {
+      max-width: 140px;
+      max-height: 32px;
+    }
   }
 }
